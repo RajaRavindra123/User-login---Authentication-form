@@ -64,7 +64,7 @@ def signup(request):
         
         # Email Address Confirmation Email
         current_site = get_current_site(request)
-        email_subject = "Confirm your Email @ GFG - Django Login!!"
+        email_subject = "Confirm your Email @Ravindra - Django Login!!"
         message2 = render_to_string('email_confirmation.html',{
             
             'name': myuser.first_name,
@@ -82,7 +82,7 @@ def signup(request):
         email.send()
         return redirect('signin')
 
-    return render(request,"myapp/signup.html")
+    return render(request,"myapp/signin.html")
 def activate(request,uidb64,token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
